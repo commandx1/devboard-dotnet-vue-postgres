@@ -32,5 +32,6 @@ coverage/
 TestResults/
 
 # Local assistant assets
+.agents/
 .agents/skills/
 skills-lock.json
