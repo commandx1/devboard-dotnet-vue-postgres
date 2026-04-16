@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --ink: #0f172a;
+  --muted: #475569;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-border: rgba(148, 163, 184, 0.26);
+  --brand: #1d4ed8;
+  --brand-strong: #1e40af;
+  --danger: #b91c1c;
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(30, 64, 175, 0.14), transparent 40%),
+    radial-gradient(circle at 100% 0%, rgba(8, 145, 178, 0.12), transparent 36%),
+    linear-gradient(180deg, #f8fbff 0%, #f6f8fc 100%);
+}
+
+a {
+  color: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: 18px;
+  padding: 18px;
+  backdrop-filter: blur(6px);
+  box-shadow: var(--shadow);
+}
+
+.button {
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-strong));
+  color: white;
+  cursor: pointer;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, filter 0.18s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+  box-shadow: 0 10px 24px rgba(30, 64, 175, 0.28);
+}
+
+.button.secondary {
+  background: linear-gradient(135deg, #334155, #1e293b);
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.input {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  font: inherit;
+  color: var(--ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: 0;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.15);
+}
+
+.stack {
+  display: grid;
+  gap: 14px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: rgba(30, 64, 175, 0.12);
+  color: var(--brand-strong);
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.32s ease, transform 0.32s ease;
+}
+
+.page-fade-enter-from,
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.content-fade-enter-active,
+.content-fade-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.content-fade-enter-from,
+.content-fade-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-fade-enter-active,
+  .page-fade-leave-active,
+  .content-fade-enter-active,
+  .content-fade-leave-active,
+  .button {
+    transition: none !important;
+  }
+}

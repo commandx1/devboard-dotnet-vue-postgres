@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# .NET
+**/bin/
+**/obj/
+
+# Logs
+*.log
+
+# Local env
+.env
+.env.*
+deploy/aws/.env.aws
+deploy/aws/.images.generated.env
+
+# Test and coverage
+coverage/
+TestResults/
+
+# Local assistant assets
+.agents/skills/
+skills-lock.json
